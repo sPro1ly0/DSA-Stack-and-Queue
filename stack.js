@@ -32,6 +32,8 @@ class Stack {
     }
 }
 
+module.exports = Stack;
+
 let starTrek = new Stack;
 
 starTrek.push('Kirk');
