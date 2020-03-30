@@ -110,7 +110,91 @@ function is_palindrome(s) {
 }
 
 // True, true, true, false
-console.log(is_palindrome("dad"));
-console.log(is_palindrome("A man, a plan, a canal: Panama"));
-console.log(is_palindrome("1001"));
-console.log(is_palindrome("Tauhida"));
+// console.log(is_palindrome("dad"));
+// console.log(is_palindrome("A man, a plan, a canal: Panama"));
+// console.log(is_palindrome("1001"));
+// console.log(is_palindrome("Tauhida"));
+
+// 4. Matching parentheses in an expression
+
+function checkMatchingBrackets(mathExpression) {
+    let stack = new Stack;
+    let openIndexes = [];
+    let closeIndexes = [];
+
+    if (!mathExpression) return null;
+
+    for (let i = 0; i < mathExpression.length; i++) {
+        if (mathExpression[i] === '(') {
+            stack.push(mathExpression[i]);
+            openIndexes.push(i);
+        }
+
+        if (mathExpression[i] === ')') {
+            if (isEmpty(stack)) {
+                return `You are missing a '('. Close parenthesis at index ${i}.`;
+            }
+            stack.pop();
+            closeIndexes.push(i);
+        }
+    }
+    // if stack is empty = true, the parenthesis match
+    if (isEmpty(stack)) {
+        return 'Parenthesis match';
+    } else {
+        return `You are missing a ')'. Open parenthesis at indexes ${openIndexes}.`;
+    }
+
+}
+// console.log(checkMatchingBrackets("(2 + (3) + ((3 + 2) + 3)")); // You are missing a ')'. Open parenthesis at indexes 0,5,11,12.
+// console.log(checkMatchingBrackets("(2 + )3) + ((3 + 2) + 3)")); // You are missing a '('. Close parenthesis at index 7.
+
+// 5. Sort stack
+
+function sortStack(stack) {
+    let top = stack.top;
+    let newStack = new Stack;
+    let minNum = top.data;
+    let maxNum = top.data;
+
+    if (top === null || top.next === null) return stack;
+
+    while (top.next !== null) {
+        if (top.data > maxNum) maxNum = top.data;
+        if (top.data < minNum) minNum = top.data;
+
+        top = top.next;
+    }
+
+    if (top.data > maxNum) maxNum = top.data;    
+    if (top.data < minNum) minNum = top.data;
+
+    newStack.push(maxNum);
+
+    while (newStack.top.data !== minNum) {
+        let top = stack.top;
+        let nextMax = minNum;
+
+        while (top.next !== null) {
+            if (top.data > nextMax && top.data < newStack.top.data) {
+                nextMax = top.data;
+            }
+            top = top.next;
+        }
+
+        if (top.data > nextMax && top.data < newStack.top.data) {
+            nextMax = top.data;
+        }
+
+        newStack.push(nextMax);
+    }
+
+    return newStack;
+};
+
+let numberStack = new Stack;
+numberStack.push(2);
+numberStack.push(5);
+numberStack.push(3); // 3 -> 5 -> 2 -> null ---> 2 -> 3 -> 5 -> null
+
+// console.log(sortStack(numberStack));
