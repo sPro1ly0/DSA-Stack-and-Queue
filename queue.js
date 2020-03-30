@@ -41,6 +41,8 @@ class Queue {
     }
 }
 
+module.exports = Queue;
+
 let starTrekQ = new Queue;
 
 starTrekQ.enqueue('Kirk');
@@ -95,4 +97,4 @@ function display(queue) {
 
 starTrekQ.dequeue();
 starTrekQ.dequeue(); // remove spock
-console.log(display(starTrekQ)); // Uhura -> Sulu -> Checkov is last item
+// console.log(display(starTrekQ)); // Uhura -> Sulu -> Checkov is last item
