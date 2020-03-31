@@ -1,3 +1,5 @@
+// 9. Square Dancing
+
 const Queue = require('./queue');
 
 class SquareDancing {
@@ -57,11 +59,11 @@ class SquareDancing {
 
 const SquareDance = new SquareDancing;
 
-SquareDance.pairDancer('F', 'Jane'); // There are 1 female dancers waiting to dance.
-SquareDance.pairDancer('M', 'Frank'); // Female dancer is Jane, and the male dancer is Frank
-SquareDance.pairDancer('M', 'John'); // There are 1 male dancers waiting to dance.
-SquareDance.pairDancer('M', 'Sherlock'); // There are 2 male dancers waiting to dance.
-SquareDance.pairDancer('F', 'Madonna'); // Female dancer is Madonna, and the male dancer is John, There are 1 male dancers waiting to dance.
-SquareDance.pairDancer('M', 'David'); // There are 2 male dancers waiting to dance.
-SquareDance.pairDancer('M', 'Christopher'); // There are 3 male dancers waiting to dance.
-SquareDance.pairDancer('F', 'Beyonce'); // Female dancer is Beyonce, and the male dancer is Sherlock, There are 2 male dancers waiting to dance.
+// SquareDance.pairDancer('F', 'Jane'); // There are 1 female dancers waiting to dance.
+// SquareDance.pairDancer('M', 'Frank'); // Female dancer is Jane, and the male dancer is Frank
+// SquareDance.pairDancer('M', 'John'); // There are 1 male dancers waiting to dance.
+// SquareDance.pairDancer('M', 'Sherlock'); // There are 2 male dancers waiting to dance.
+// SquareDance.pairDancer('F', 'Madonna'); // Female dancer is Madonna, and the male dancer is John, There are 1 male dancers waiting to dance.
+// SquareDance.pairDancer('M', 'David'); // There are 2 male dancers waiting to dance.
+// SquareDance.pairDancer('M', 'Christopher'); // There are 3 male dancers waiting to dance.
+// SquareDance.pairDancer('F', 'Beyonce'); // Female dancer is Beyonce, and the male dancer is Sherlock, There are 2 male dancers waiting to dance.
